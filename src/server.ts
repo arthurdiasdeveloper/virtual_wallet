@@ -1,20 +1,13 @@
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
-app.listen(3334, () => {
+app.use(express.json());
 
-    app.get('/', (request, response) => {
+app.use(routes);
 
-        return response.json({message: 'Hello word, I´m not dead!'})
+app.listen(3333, () => {
 
-
-
-    } )
-
-    console.log('This server started in port 3333!');
-
+  console.log('server started on por 3333!');
 });
-
-
-
